@@ -10,6 +10,7 @@
 | 五年级写作提升训练手册 | https://beupgo.github.io/grade5-chinese-writing.html |
 | 北京五年级数学 · 母题学习系统 | https://beupgo.github.io/grade5-math.html |
 | 分数专题 · 彻底学会分数 | https://beupgo.github.io/g6-math-fractions.html |
+| 图形思想专题 · 用画图解数学题 | https://beupgo.github.io/g6-math-geometric-thinking.html |
 | 北京六年级数学 · 母题学习系统 | https://beupgo.github.io/grade6-math.html |
 | 导航首页 | https://beupgo.github.io/ |
 <!-- AUTO-TABLE-END -->
@@ -31,6 +32,7 @@
 ├─ grade5-chinese-writing.html  # 五年级写作提升训练手册
 ├─ grade5-math.html  # 北京五年级数学 · 母题学习系统
 ├─ g6-math-fractions.html  # 分数专题 · 彻底学会分数
+├─ g6-math-geometric-thinking.html  # 图形思想专题 · 用画图解数学题
 └─ grade6-math.html  # 北京六年级数学 · 母题学习系统
 └─ README.md
 ```
