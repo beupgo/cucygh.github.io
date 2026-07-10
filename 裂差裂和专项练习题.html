@@ -1796,117 +1796,122 @@ const DATA = {
   cha: [
     {
       no:'变种①', kind:'variant', level:2, title:'裂差练习 ①',
-      body:`求和:<div class="math">${F(3,'1×4')}<span class="op">+</span>${F(3,'4×7')}<span class="op">+</span>${F(3,'7×10')}<span class="op">+</span>…<span class="op">+</span>${F(3,'28×31')}</div>`,
-      think:`<b>先看结构</b>:两因数相差 3,而分子恰好也是 3。<b>再联想</b>:分子 = 两因数之差时,补的倍数正好被分子约掉,可以直接裂开、不用再乘系数。`,
-      hint:`分子 3 = 两因数之差(4−1=3),此时 <b>${F(3,'n(n+3)')} = ${F(1,'n')} − ${F(1,'n+3')}</b>,无需再补 ${F(1,'3')}。`,
+      body:`求和:<div class="math">${F(1,6)}<span class="op">+</span>${F(1,12)}<span class="op">+</span>${F(1,20)}<span class="op">+</span>${F(1,30)}<span class="op">+</span>${F(1,42)}<span class="op">+</span>${F(1,56)}</div>`,
+      think:`<b>先别急着套公式</b>:分母是 6、12、20…,并没有写成两数相乘。<b>动手变换</b>:6=2×3、12=3×4、20=4×5……原来每个分母都是<b>相邻两数之积</b>,变形之后就能裂了。`,
+      hint:`先把分母还原成相邻两数之积:6=2×3、12=3×4…,再用 <b>${F(1,'n(n+1)')} = ${F(1,'n')} − ${F(1,'n+1')}</b>。`,
       steps:[
-        `分子恰为两因数之差,直接裂:<div class="math">${F(3,'n×(n+3)')}<span class="op">=</span>${F(1,'n')}<span class="op">−</span>${F(1,'n+3')}</div>`,
-        `逐项相消(相邻错开 3 位):<div class="cancel">(${F(1,'1')}<span class="op">−</span><span class="kill">${F(1,'4')}</span>) + (<span class="kill">${F(1,'4')}</span><span class="op">−</span><span class="kill">${F(1,'7')}</span>) + … + (<span class="kill">${F(1,'28')}</span><span class="op">−</span>${F(1,'31')})</div>`,
-        `只剩首尾:<div class="math"><span class="keep">${F(1,'1')}</span><span class="op">−</span><span class="keep">${F(1,'31')}</span></div>`,
-        `计算:<div class="math">${F(1,'1')}<span class="op">−</span>${F(1,'31')}<span class="op">=</span>${F(30,'31')}</div>`
+        `把每个分母分解成相邻两数之积:<div class="math">${F(1,6)}=${F(1,'2×3')},<span class="op"> </span>${F(1,12)}=${F(1,'3×4')},<span class="op"> </span>…,<span class="op"> </span>${F(1,56)}=${F(1,'7×8')}</div>`,
+        `每项按裂差拆:<div class="math">${F(1,'n(n+1)')}<span class="op">=</span>${F(1,'n')}<span class="op">−</span>${F(1,'n+1')}</div>`,
+        `逐项相消:<div class="cancel">(${F(1,'2')}<span class="op">−</span><span class="kill">${F(1,'3')}</span>) + (<span class="kill">${F(1,'3')}</span><span class="op">−</span><span class="kill">${F(1,'4')}</span>) + … + (<span class="kill">${F(1,'7')}</span><span class="op">−</span>${F(1,'8')})</div>`,
+        `只剩首尾:<div class="math"><span class="keep">${F(1,'2')}</span><span class="op">−</span><span class="keep">${F(1,'8')}</span><span class="op">=</span>${F(4,'8')}<span class="op">−</span>${F(1,'8')}<span class="op">=</span>${F(3,'8')}</div>`
       ],
-      result:`原式 = ${F(30,'31')}`,
-      takeaway:`一条通法:分子 = 两因数之差,就能<b>直接裂开</b>,省去补倍数——先算差、再看分子,是识题的关键。`
+      result:`原式 = ${F(3,'8')}`,
+      takeaway:`关键一步是<b>把分母还原成相乘</b>——看到 6、12、20 这种数,先想它们是不是相邻两数之积,能拆才能消。`
     },
     {
-      no:'变种②', kind:'variant', level:2, title:'裂差练习 ②',
-      body:`求和:<div class="math">${F(5,'1×6')}<span class="op">+</span>${F(5,'6×11')}<span class="op">+</span>${F(5,'11×16')}<span class="op">+</span>${F(5,'16×21')}</div>`,
-      think:`<b>先看结构</b>:两因数相差 5,分子也恰好是 5。<b>再联想</b>:分子 = 两因数之差,依旧可以直接裂,间隔再大规律也一样。`,
-      hint:`分子 5 = 两因数之差(6−1=5),<b>${F(5,'n(n+5)')} = ${F(1,'n')} − ${F(1,'n+5')}</b>,无需补倍数。`,
+      no:'变种②', kind:'variant', level:3, title:'裂差练习 ②',
+      body:`求和:<div class="math">${F(2,3)}<span class="op">+</span>${F(2,15)}<span class="op">+</span>${F(2,35)}<span class="op">+</span>${F(2,63)}<span class="op">+</span>${F(2,99)}</div>`,
+      think:`<b>分母还是先拆开</b>:3、15、35、63、99 都不是相乘的形式,自己动手分解——3=1×3、15=3×5、35=5×7…原来是<b>相差 2 的两数之积</b>。<b>再看分子</b>:分子 2 恰好等于两因数之差,配凑好后能直接裂、系数为 1。`,
+      hint:`先把分母写成两数之积(相差 2),再看分子 2 = 两因数之差:<b>${F(2,'n(n+2)')} = ${F(1,'n')} − ${F(1,'n+2')}</b>,系数正好约成 1。`,
       steps:[
-        `分子恰为两因数之差,直接裂:<div class="math">${F(5,'n×(n+5)')}<span class="op">=</span>${F(1,'n')}<span class="op">−</span>${F(1,'n+5')}</div>`,
-        `逐项相消(相邻错开 5 位):<div class="cancel">(${F(1,'1')}<span class="op">−</span><span class="kill">${F(1,'6')}</span>) + (<span class="kill">${F(1,'6')}</span><span class="op">−</span><span class="kill">${F(1,'11')}</span>) + (<span class="kill">${F(1,'11')}</span><span class="op">−</span><span class="kill">${F(1,'16')}</span>) + (<span class="kill">${F(1,'16')}</span><span class="op">−</span>${F(1,'21')})</div>`,
-        `只剩首尾:<div class="math"><span class="keep">${F(1,'1')}</span><span class="op">−</span><span class="keep">${F(1,'21')}</span></div>`,
-        `计算:<div class="math">${F(1,'1')}<span class="op">−</span>${F(1,'21')}<span class="op">=</span>${F(20,'21')}</div>`
+        `先把分母分解成相差 2 的两数之积:<div class="math">${F(2,3)}=${F(2,'1×3')},<span class="op"> </span>${F(2,15)}=${F(2,'3×5')},<span class="op"> </span>…,<span class="op"> </span>${F(2,99)}=${F(2,'9×11')}</div>`,
+        `分子 = 因数差,直接裂:<div class="math">${F(2,'n(n+2)')}<span class="op">=</span>${F(1,'n')}<span class="op">−</span>${F(1,'n+2')}</div>`,
+        `逐项相消(错开 2 位):<div class="cancel">(${F(1,'1')}<span class="op">−</span><span class="kill">${F(1,'3')}</span>) + (<span class="kill">${F(1,'3')}</span><span class="op">−</span><span class="kill">${F(1,'5')}</span>) + … + (<span class="kill">${F(1,'9')}</span><span class="op">−</span>${F(1,'11')})</div>`,
+        `只剩首尾:<div class="math"><span class="keep">${F(1,'1')}</span><span class="op">−</span><span class="keep">${F(1,'11')}</span></div>`,
+        `计算:<div class="math">${F(1,'1')}<span class="op">−</span>${F(1,'11')}<span class="op">=</span>${F(10,'11')}</div>`
       ],
-      result:`原式 = ${F(20,'21')}`,
-      takeaway:`间隔无论 1、3 还是 5,只要<b>分子 = 两因数之差</b>就能直接裂——规律和间隔大小无关。`
+      result:`原式 = ${F(10,'11')}`,
+      takeaway:`先比"分子"和"因数差":两者相等就能直接裂;不等时,补的系数 = 因数差 ÷ 分子——<b>先配凑,再裂项</b>。`
     },
     {
       no:'变种③', kind:'variant', level:3, title:'裂差练习 ③',
-      body:`求和:<div class="math">${F(1,'2×4')}<span class="op">+</span>${F(1,'4×6')}<span class="op">+</span>${F(1,'6×8')}<span class="op">+</span>…<span class="op">+</span>${F(1,'18×20')}</div>`,
-      think:`<b>对比</b>:因数都是偶数、相差 2,但分子是 1(不是 2)。<b>联想</b>:差为 2 而分子只有 1,拆开后要在前面补 ${F(1,'2')} 来平衡。`,
-      hint:`两因数相差 2、分子为 1,需补 ${F(1,'2')}:<b>${F(1,'n(n+2)')} = ${F(1,'2')}(${F(1,'n')} − ${F(1,'n+2')})</b>。`,
+      body:`求和:<div class="math">${F(1,15)}<span class="op">+</span>${F(1,35)}<span class="op">+</span>${F(1,63)}<span class="op">+</span>${F(1,99)}<span class="op">+</span>${F(1,143)}</div>`,
+      think:`<b>分母先自己分解</b>:15、35、63、99、143 都拆成两数之积——15=3×5、35=5×7…发现是<b>相差 2 的两数之积</b>。<b>再比分子</b>:因数差是 2,分子只有 1,不能直接裂,要在前面<b>补上 ${F(1,'2')}</b> 把差凑齐,再裂。`,
+      hint:`先把分母写成相差 2 的两数之积,差为 2、分子为 1,需补 ${F(1,'2')}:<b>${F(1,'n(n+2)')} = ${F(1,'2')}(${F(1,'n')} − ${F(1,'n+2')})</b>。`,
       steps:[
-        `裂项(差为 2,提出 ${F(1,'2')}):<div class="math">${F(1,'n×(n+2)')}<span class="op">=</span>${F(1,'2')}(${F(1,'n')}<span class="op">−</span>${F(1,'n+2')})</div>`,
-        `提 ${F(1,'2')} 后逐项相消:<div class="cancel">${F(1,'2')}[(${F(1,'2')}<span class="op">−</span><span class="kill">${F(1,'4')}</span>) + (<span class="kill">${F(1,'4')}</span><span class="op">−</span><span class="kill">${F(1,'6')}</span>) + … + (<span class="kill">${F(1,'18')}</span><span class="op">−</span>${F(1,'20')})]</div>`,
-        `剩首尾:<div class="math">${F(1,'2')}(<span class="keep">${F(1,'2')}</span><span class="op">−</span><span class="keep">${F(1,'20')}</span>)</div>`,
-        `计算:<div class="math">${F(1,'2')}<span class="op">×</span>${F(9,'20')}<span class="op">=</span>${F(9,'40')}</div>`
+        `先把分母分解成相差 2 的两数之积:<div class="math">${F(1,15)}=${F(1,'3×5')},<span class="op"> </span>${F(1,35)}=${F(1,'5×7')},<span class="op"> </span>…,<span class="op"> </span>${F(1,143)}=${F(1,'11×13')}</div>`,
+        `差 2 分子 1,提出 ${F(1,'2')} 再裂:<div class="math">${F(1,'n(n+2)')}<span class="op">=</span>${F(1,'2')}(${F(1,'n')}<span class="op">−</span>${F(1,'n+2')})</div>`,
+        `提 ${F(1,'2')} 后逐项相消:<div class="cancel">${F(1,'2')}[(${F(1,'3')}<span class="op">−</span><span class="kill">${F(1,'5')}</span>) + (<span class="kill">${F(1,'5')}</span><span class="op">−</span><span class="kill">${F(1,'7')}</span>) + … + (<span class="kill">${F(1,'11')}</span><span class="op">−</span>${F(1,'13')})]</div>`,
+        `剩首尾:<div class="math">${F(1,'2')}(<span class="keep">${F(1,'3')}</span><span class="op">−</span><span class="keep">${F(1,'13')}</span>)</div>`,
+        `计算:<div class="math">${F(1,'2')}<span class="op">×</span>${F(10,'39')}<span class="op">=</span>${F(5,'39')}</div>`
       ],
-      result:`原式 = ${F(9,'40')}`,
-      takeaway:`别被"全是偶数"迷惑——真正决定补几分之一的是<b>两因数之差</b>,差 2 就补 ${F(1,'2')}。`
+      result:`原式 = ${F(5,'39')}`,
+      takeaway:`裂项前先问自己:分子够不够凑成"因数差"?不够就<b>提一个系数补齐</b>,这是裂差最常用的一步变换。`
     },
     {
       no:'变种④', kind:'variant', level:4, title:'裂差练习 ④',
-      body:`求和:<div class="math">${F(4,'1×3')}<span class="op">+</span>${F(4,'3×5')}<span class="op">+</span>${F(4,'5×7')}<span class="op">+</span>${F(4,'7×9')}<span class="op">+</span>${F(4,'9×11')}</div>`,
-      think:`<b>看清关系</b>:两因数相差 2,分子却是 4。<b>联想</b>:先按差为 2 裂(得 ${F(1,'2')} 系数),分子 4 里含两个 2,合起来要<b>补 2 倍</b>。`,
-      hint:`差为 2、分子为 4:<b>${F(4,'n(n+2)')} = 4·${F(1,'2')}(${F(1,'n')} − ${F(1,'n+2')}) = 2(${F(1,'n')} − ${F(1,'n+2')})</b>。`,
+      body:`求和:<div class="math">${F(3,4)}<span class="op">+</span>${F(5,36)}<span class="op">+</span>${F(7,144)}<span class="op">+</span>${F(9,400)}</div>`,
+      think:`<b>先拆分母、再找规律</b>:4、36、144、400 都是<b>完全平方数</b>(4=2²、36=6²…),而且每个都能拆成两个相邻平方之积:4=1²×2²、36=2²×3²…。<b>看分子</b>:3、5、7、9 是奇数 2n+1,而平方差 (n+1)²−n² 恰好 = 2n+1,于是可拆成<b>两个平方的倒数之差</b>。`,
+      hint:`先把分母还原成相邻平方之积(4=1²×2²…),分子是 2n+1:<b>${F('2n+1','n²(n+1)²')} = ${F(1,'n²')} − ${F(1,'(n+1)²')}</b>。`,
       steps:[
-        `先按差 2 裂,再乘分子 4:<div class="math">${F(4,'n×(n+2)')}<span class="op">=</span>2(${F(1,'n')}<span class="op">−</span>${F(1,'n+2')})</div>`,
-        `提出 2 后逐项相消:<div class="cancel">2[(${F(1,'1')}<span class="op">−</span><span class="kill">${F(1,'3')}</span>) + (<span class="kill">${F(1,'3')}</span><span class="op">−</span><span class="kill">${F(1,'5')}</span>) + … + (<span class="kill">${F(1,'9')}</span><span class="op">−</span>${F(1,'11')})]</div>`,
-        `剩首尾:<div class="math">2(<span class="keep">${F(1,'1')}</span><span class="op">−</span><span class="keep">${F(1,'11')}</span>)</div>`,
-        `计算:<div class="math">2<span class="op">×</span>${F(10,'11')}<span class="op">=</span>${F(20,'11')}</div>`
+        `把分母分解成相邻平方之积:<div class="math">${F(3,4)}=${F(3,'1²×2²')},<span class="op"> </span>${F(5,36)}=${F(5,'2²×3²')},<span class="op"> </span>…,<span class="op"> </span>${F(9,400)}=${F(9,'4²×5²')}</div>`,
+        `分子=(n+1)²−n²,拆成平方倒数差:<div class="math">${F('2n+1','n²(n+1)²')}<span class="op">=</span>${F(1,'n²')}<span class="op">−</span>${F(1,'(n+1)²')}</div>`,
+        `逐项相消(以平方为整体):<div class="cancel">(${F(1,'1')}<span class="op">−</span><span class="kill">${F(1,'4')}</span>) + (<span class="kill">${F(1,'4')}</span><span class="op">−</span><span class="kill">${F(1,'9')}</span>) + (<span class="kill">${F(1,'9')}</span><span class="op">−</span><span class="kill">${F(1,'16')}</span>) + (<span class="kill">${F(1,'16')}</span><span class="op">−</span>${F(1,'25')})</div>`,
+        `只剩首尾:<div class="math"><span class="keep">${F(1,'1')}</span><span class="op">−</span><span class="keep">${F(1,'25')}</span></div>`,
+        `计算:<div class="math">${F(1,'1')}<span class="op">−</span>${F(1,'25')}<span class="op">=</span>${F(24,'25')}</div>`
       ],
-      result:`原式 = ${F(20,'11')}`,
-      takeaway:`补的倍数 = 分子 ÷ 因数差(这里 4÷2=2)。<b>先算差、再看分子</b>,倍数自然就出来了。`
+      result:`原式 = ${F(24,'25')}`,
+      takeaway:`遇到平方型分母,先想<b>平方差公式</b>:(n+1)²−n²=2n+1。看出分子正是这个差,就能拆成平方倒数之差——这是"识别结构"最考功力的一类变换。`
     }
   ],
   he: [
     {
       no:'变种①', kind:'variant', level:2, title:'裂和练习 ①',
-      body:`计算:<div class="math">${F('2+3','2×3')}<span class="op">−</span>${F('3+4','3×4')}<span class="op">+</span>${F('4+5','4×5')}<span class="op">−</span>${F('5+6','5×6')}<span class="op">+</span>${F('6+7','6×7')}<span class="op">−</span>${F('7+8','7×8')}</div>`,
-      think:`<b>先观察</b>:结构是分子 = 分母两因数之和,只是<b>起点从 2 开始</b>。<b>再联想</b>:相消规律不变,注意首尾两项由起止位置决定。`,
-      hint:`裂和公式 <b>${F('n+(n+1)','n(n+1)')} = ${F(1,'n')} + ${F(1,'n+1')}</b>。首项带 + 起、末项带 −,首尾各留一个。`,
+      body:`计算:<div class="math">${F(5,6)}<span class="op">−</span>${F(7,12)}<span class="op">+</span>${F(9,20)}<span class="op">−</span>${F(11,30)}</div>`,
+      think:`<b>目标是"按公式构造",不是照抄</b>。裂和要求 分母=a×b 且 分子=a+b。<b>动手构造</b>:把 6 拆成两个数之积,还要让这两数之和 = 分子 5 —— 试出 2×3(积=6、和=5),构造成功才能裂。其余各项照此自己构造。`,
+      hint:`裂和公式 <b>${F('a+b','a×b')} = ${F(1,'a')} + ${F(1,'b')}</b>。用它的前提是先<b>构造</b>出 a、b:让 a×b=分母 且 a+b=分子。`,
       steps:[
-        `每项按裂和公式拆:<div class="math">${F('n+(n+1)','n(n+1)')}<span class="op">=</span>${F(1,'n')}<span class="op">+</span>${F(1,'n+1')}</div>`,
-        `代入(从 n=2 起,加减交替):<div class="math">(${F(1,'2')}<span class="op">+</span>${F(1,'3')})<span class="op">−</span>(${F(1,'3')}<span class="op">+</span>${F(1,'4')})<span class="op">+</span>…<span class="op">−</span>(${F(1,'7')}<span class="op">+</span>${F(1,'8')})</div>`,
-        `相邻相同分数抵消:<div class="cancel"><span class="keep">${F(1,'2')}</span> + (<span class="kill">${F(1,'3')}</span><span class="op">−</span><span class="kill">${F(1,'3')}</span>) − … − <span class="keep">${F(1,'8')}</span></div>`,
-        `只剩首尾:<div class="math"><span class="keep">${F(1,'2')}</span><span class="op">−</span><span class="keep">${F(1,'8')}</span><span class="op">=</span>${F(4,'8')}<span class="op">−</span>${F(1,'8')}<span class="op">=</span>${F(3,'8')}</div>`
+        `按"积=分母、和=分子"构造 a、b:<div class="math">${F(5,6)}:找 a×b=6 且 a+b=5 → a=2, b=3</div>`,
+        `构造成功后再套公式拆开:<div class="math">${F(5,6)}<span class="op">=</span>${F('2+3','2×3')}<span class="op">=</span>${F(1,'2')}<span class="op">+</span>${F(1,'3')}</div>`,
+        `每项都这样构造,代入(加减交替):<div class="math">(${F(1,'2')}<span class="op">+</span>${F(1,'3')})<span class="op">−</span>(${F(1,'3')}<span class="op">+</span>${F(1,'4')})<span class="op">+</span>(${F(1,'4')}<span class="op">+</span>${F(1,'5')})<span class="op">−</span>(${F(1,'5')}<span class="op">+</span>${F(1,'6')})</div>`,
+        `相邻相同分数抵消,只剩首尾:<div class="cancel"><span class="keep">${F(1,'2')}</span> + (<span class="kill">${F(1,'3')}</span><span class="op">−</span><span class="kill">${F(1,'3')}</span>) − … − <span class="keep">${F(1,'6')}</span> = <span class="keep">${F(1,'2')}</span><span class="op">−</span><span class="keep">${F(1,'6')}</span></div>`,
+        `计算:<div class="math">${F(1,'2')}<span class="op">−</span>${F(1,'6')}<span class="op">=</span>${F(3,'6')}<span class="op">−</span>${F(1,'6')}<span class="op">=</span>${F(1,'3')}</div>`
       ],
-      result:`原式 = ${F(3,'8')}`,
-      takeaway:`裂和的相消规律与起点无关——先<b>看清首项和末项的符号</b>,就知道最后留下哪两项。`
+      result:`原式 = ${F(1,'3')}`,
+      takeaway:`会裂和 ≠ 会抄公式——要练的是<b>反向构造</b>:拿到一个分数,自己拆出满足"积=分母、和=分子"的两个数,再套公式。`
     },
     {
-      no:'变种②', kind:'variant', level:2, title:'裂和练习 ②',
-      body:`计算:<div class="math">${F('1+2','1×2')}<span class="op">−</span>${F('2+3','2×3')}<span class="op">+</span>${F('3+4','3×4')}<span class="op">−</span>…<span class="op">−</span>${F('8+9','8×9')}</div>`,
-      think:`<b>先观察</b>:仍是分子 = 分母两因数之和,只是项数更多(到 8×9)。<b>再联想</b>:项再多,相消规律不变,盯住首尾符号即可。`,
-      hint:`裂和公式 <b>${F('n+(n+1)','n(n+1)')} = ${F(1,'n')} + ${F(1,'n+1')}</b>。首项带 + 起、末项带 −,首尾各留一个。`,
+      no:'变种②', kind:'variant', level:3, title:'裂和练习 ②',
+      body:`计算:<div class="math">1<span class="op">−</span>${F(1,'2')}<span class="op">−</span>${F(1,'6')}<span class="op">−</span>${F(1,'12')}<span class="op">−</span>${F(1,'20')}</div>`,
+      think:`<b>先整体观察</b>:后面几项 ${F(1,'2')}、${F(1,'6')}、${F(1,'12')}、${F(1,'20')} 分母是 2、6、12、20——正是相邻两数之积!<b>灵活变换</b>:把它们看成一个<b>裂差之和</b>整体减掉,而不是一项项通分硬算。`,
+      hint:`把被减的那串还原成裂差和:${F(1,'2')}=${F(1,'1×2')}、${F(1,'6')}=${F(1,'2×3')}…,而 <b>${F(1,'n(n+1)')}=${F(1,'n')}−${F(1,'n+1')}</b>。`,
       steps:[
-        `每项按裂和公式拆:<div class="math">${F('n+(n+1)','n(n+1)')}<span class="op">=</span>${F(1,'n')}<span class="op">+</span>${F(1,'n+1')}</div>`,
-        `代入(共 8 项,加减交替):<div class="math">(${F(1,'1')}<span class="op">+</span>${F(1,'2')})<span class="op">−</span>(${F(1,'2')}<span class="op">+</span>${F(1,'3')})<span class="op">+</span>…<span class="op">−</span>(${F(1,'8')}<span class="op">+</span>${F(1,'9')})</div>`,
-        `相邻相同分数抵消:<div class="cancel"><span class="keep">${F(1,'1')}</span> + (<span class="kill">${F(1,'2')}</span><span class="op">−</span><span class="kill">${F(1,'2')}</span>) − … − <span class="keep">${F(1,'9')}</span></div>`,
-        `末项带负号,只剩首尾:<div class="math"><span class="keep">${F(1,'1')}</span><span class="op">−</span><span class="keep">${F(1,'9')}</span><span class="op">=</span>${F(8,'9')}</div>`
+        `把被减各项分母还原成相邻两数之积:<div class="math">${F(1,'2')}=${F(1,'1×2')},<span class="op"> </span>${F(1,'6')}=${F(1,'2×3')},<span class="op"> </span>${F(1,'12')}=${F(1,'3×4')},<span class="op"> </span>${F(1,'20')}=${F(1,'4×5')}</div>`,
+        `它们的和是一个裂差和,先整体求出:<div class="cancel">(${F(1,'1')}<span class="op">−</span><span class="kill">${F(1,'2')}</span>) + (<span class="kill">${F(1,'2')}</span><span class="op">−</span><span class="kill">${F(1,'3')}</span>) + … + (<span class="kill">${F(1,'4')}</span><span class="op">−</span>${F(1,'5')}) = ${F(1,'1')}<span class="op">−</span>${F(1,'5')} = ${F(4,'5')}</div>`,
+        `再用整体的 1 去减:<div class="math">1<span class="op">−</span>${F(4,'5')}</div>`,
+        `计算:<div class="math">1<span class="op">−</span>${F(4,'5')}<span class="op">=</span>${F(1,'5')}</div>`
       ],
-      result:`原式 = ${F(8,'9')}`,
-      takeaway:`项数多少都不影响相消——真正要判断的是<b>末项符号</b>:偶数项时末项带负,首尾一正一负。`
+      result:`原式 = ${F(1,'5')}`,
+      takeaway:`看到"1 减一串分数",别急着通分——先看<b>这串能不能凑成裂差和</b>,整体算完再减,又快又不出错。`
     },
     {
       no:'变种③', kind:'variant', level:3, title:'裂和练习 ③',
-      body:`计算:<div class="math">${F('2+4','2×4')}<span class="op">−</span>${F('4+6','4×6')}<span class="op">+</span>${F('6+8','6×8')}<span class="op">−</span>${F('8+10','8×10')}<span class="op">+</span>${F('10+12','10×12')}</div>`,
-      think:`<b>对比常见题型</b>:分母两因数都是偶数、相差 2。<b>联想</b>:裂和公式对任意两个数都成立,和"因数差多少"无关,直接拆成两个倒数之和。`,
-      hint:`裂和与因数差无关:<b>${F('a+b','a×b')} = ${F(1,'a')} + ${F(1,'b')}</b>,这里 a、b 是相邻的偶数。`,
+      body:`计算:<div class="math">${F(5,4)}<span class="op">−</span>${F(11,28)}<span class="op">+</span>${F(17,70)}<span class="op">−</span>${F(23,130)}</div>`,
+      think:`<b>双重构造</b>:分母 4、28、70、130 要先构造成 a×b(4=1×4、28=4×7…,间隔为 3),同时让 a+b = 分子(1+4=5、4+7=11…)。两个条件同时满足才算构造成功,再套公式裂开。`,
+      hint:`同样先<b>构造</b> a、b:让 a×b=分母 且 a+b=分子(此处 a、b 间隔为 3),再用 <b>${F('a+b','a×b')} = ${F(1,'a')} + ${F(1,'b')}</b>。`,
       steps:[
-        `按裂和公式拆:<div class="math">${F('n+(n+2)','n(n+2)')}<span class="op">=</span>${F(1,'n')}<span class="op">+</span>${F(1,'n+2')}</div>`,
-        `代入(加减交替):<div class="math">(${F(1,'2')}<span class="op">+</span>${F(1,'4')})<span class="op">−</span>(${F(1,'4')}<span class="op">+</span>${F(1,'6')})<span class="op">+</span>…<span class="op">+</span>(${F(1,'10')}<span class="op">+</span>${F(1,'12')})</div>`,
-        `相邻相同分数抵消:<div class="cancel"><span class="keep">${F(1,'2')}</span> + (<span class="kill">${F(1,'4')}</span><span class="op">−</span><span class="kill">${F(1,'4')}</span>) − … + <span class="keep">${F(1,'12')}</span></div>`,
-        `只剩首尾:<div class="math"><span class="keep">${F(1,'2')}</span><span class="op">+</span><span class="keep">${F(1,'12')}</span><span class="op">=</span>${F(6,'12')}<span class="op">+</span>${F(1,'12')}<span class="op">=</span>${F(7,'12')}</div>`
+        `以首项为例构造 a、b:<div class="math">${F(5,4)}:找 a×b=4 且 a+b=5 → a=1, b=4</div>`,
+        `构造成功后套公式拆开:<div class="math">${F(5,4)}<span class="op">=</span>${F('1+4','1×4')}<span class="op">=</span>${F(1,'1')}<span class="op">+</span>${F(1,'4')}</div>`,
+        `每项都这样构造(间隔 3),代入(加减交替):<div class="math">(${F(1,'1')}<span class="op">+</span>${F(1,'4')})<span class="op">−</span>(${F(1,'4')}<span class="op">+</span>${F(1,'7')})<span class="op">+</span>(${F(1,'7')}<span class="op">+</span>${F(1,'10')})<span class="op">−</span>(${F(1,'10')}<span class="op">+</span>${F(1,'13')})</div>`,
+        `相邻相同分数抵消:<div class="cancel"><span class="keep">${F(1,'1')}</span> + (<span class="kill">${F(1,'4')}</span><span class="op">−</span><span class="kill">${F(1,'4')}</span>) − … − <span class="keep">${F(1,'13')}</span></div>`,
+        `末项带负,只剩首尾:<div class="math"><span class="keep">${F(1,'1')}</span><span class="op">−</span><span class="keep">${F(1,'13')}</span><span class="op">=</span>${F(12,'13')}</div>`
       ],
-      result:`原式 = ${F(7,'12')}`,
-      takeaway:`不管因数是奇是偶、差几,裂和永远是 ${F('a+b','ab')}=${F(1,'a')}+${F(1,'b')}——<b>无需补倍数</b>。`
+      result:`原式 = ${F(12,'13')}`,
+      takeaway:`分母、分子都只给了一个数——要靠自己<b>同时构造出 a×b=分母 与 a+b=分子</b>;间隔多大、数字多大都不改变这套构造方法。`
     },
     {
       no:'变种④', kind:'variant', level:4, title:'裂和练习 ④',
-      body:`计算:<div class="math">${F('1+4','1×4')}<span class="op">−</span>${F('4+7','4×7')}<span class="op">+</span>${F('7+10','7×10')}<span class="op">−</span>${F('10+13','10×13')}<span class="op">+</span>${F('13+16','13×16')}</div>`,
-      think:`<b>升维思考</b>:两因数间隔拉大到 3。<b>联想</b>:裂和公式与间隔无关,分子(两数之和)÷分母(两数之积)照样拆成两个倒数之和。`,
-      hint:`裂和与间隔无关:<b>${F('a+b','a×b')} = ${F(1,'a')} + ${F(1,'b')}</b>,这里 a、b 相差 3。`,
+      body:`求和:<div class="math">${F(1,'1×2×3')}<span class="op">+</span>${F(1,'2×3×4')}<span class="op">+</span>${F(1,'3×4×5')}<span class="op">+</span>…<span class="op">+</span>${F(1,'8×9×10')}</div>`,
+      think:`<b>压轴变换</b>:分母是<b>三个连续数相乘</b>,单看无从下手。<b>降级思路</b>:把 ${F(1,'n(n+1)(n+2)')} 拆成<b>相邻两组"两连乘"之差</b>,再补 ${F(1,'2')} 平衡——用一次巧妙变换,把三连乘降回熟悉的两连乘相消。`,
+      hint:`三连乘降级:<b>${F(1,'n(n+1)(n+2)')} = ${F(1,'2')}(${F(1,'n(n+1)')} − ${F(1,'(n+1)(n+2)')})</b>。`,
       steps:[
-        `按裂和公式拆(a、b 相差 3):<div class="math">${F('n+(n+3)','n(n+3)')}<span class="op">=</span>${F(1,'n')}<span class="op">+</span>${F(1,'n+3')}</div>`,
-        `代入(加减交替):<div class="math">(${F(1,'1')}<span class="op">+</span>${F(1,'4')})<span class="op">−</span>(${F(1,'4')}<span class="op">+</span>${F(1,'7')})<span class="op">+</span>…<span class="op">+</span>(${F(1,'13')}<span class="op">+</span>${F(1,'16')})</div>`,
-        `相邻相同分数抵消:<div class="cancel"><span class="keep">${F(1,'1')}</span> + (<span class="kill">${F(1,'4')}</span><span class="op">−</span><span class="kill">${F(1,'4')}</span>) − … + <span class="keep">${F(1,'16')}</span></div>`,
-        `只剩首尾:<div class="math"><span class="keep">${F(1,'1')}</span><span class="op">+</span><span class="keep">${F(1,'16')}</span><span class="op">=</span>${F(17,'16')}</div>`
+        `把每项拆成相邻两连乘之差,提出 ${F(1,'2')}:<div class="math">${F(1,'n(n+1)(n+2)')}<span class="op">=</span>${F(1,'2')}(${F(1,'n(n+1)')}<span class="op">−</span>${F(1,'(n+1)(n+2)')})</div>`,
+        `提 ${F(1,'2')} 后逐项相消(以两连乘为整体):<div class="cancel">${F(1,'2')}[(${F(1,'1×2')}<span class="op">−</span><span class="kill">${F(1,'2×3')}</span>) + (<span class="kill">${F(1,'2×3')}</span><span class="op">−</span><span class="kill">${F(1,'3×4')}</span>) + … + (<span class="kill">${F(1,'8×9')}</span><span class="op">−</span>${F(1,'9×10')})]</div>`,
+        `剩首尾两块:<div class="math">${F(1,'2')}(<span class="keep">${F(1,'1×2')}</span><span class="op">−</span><span class="keep">${F(1,'9×10')}</span>)</div>`,
+        `计算:<div class="math">${F(1,'2')}(${F(1,'2')}<span class="op">−</span>${F(1,'90')})<span class="op">=</span>${F(1,'2')}<span class="op">×</span>${F(44,'90')}<span class="op">=</span>${F(11,'45')}</div>`
       ],
-      result:`原式 = ${F(17,'16')}`,
-      takeaway:`间隔从 1 到 3 都一样——裂和的内核始终是 ${F('a+b','ab')}=${F(1,'a')}+${F(1,'b')},换汤不换药。`
+      result:`原式 = ${F(11,'45')}`,
+      takeaway:`碰到多个连续数相乘,思路是<b>降一级</b>——把 k 连乘拆成相邻两个 (k−1) 连乘之差再补倍数,把陌生问题变换成熟悉的相消,这正是数学"化归"的灵活之处。`
     }
   ]
 };
