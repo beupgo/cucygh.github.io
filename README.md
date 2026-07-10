@@ -20,6 +20,7 @@
 | 北京六年级数学 · 母题学习系统 | https://beupgo.github.io/grade6-math.html |
 | 英语冒险岛 · 3-6年级暑假 | https://beupgo.github.io/english5.html |
 | 裂差 · 裂和 应用练习 | 小学数学专题 | https://beupgo.github.io/小学数学-裂差裂和-应用练习.html |
+| 裂差 · 裂和 应用练习 | 小学数学专题 | https://beupgo.github.io/裂差裂和专项练习题.html |
 | 导航首页 | https://beupgo.github.io/ |
 <!-- AUTO-TABLE-END -->
 
@@ -49,7 +50,8 @@
 ├─ g6-math-geometric-thinking.html  # 图形思想专题 · 用画图解数学题
 ├─ grade6-math.html  # 北京六年级数学 · 母题学习系统
 ├─ english5.html  # 英语冒险岛 · 3-6年级暑假
-└─ 小学数学-裂差裂和-应用练习.html  # 裂差 · 裂和 应用练习 | 小学数学专题
+├─ 小学数学-裂差裂和-应用练习.html  # 裂差 · 裂和 应用练习 | 小学数学专题
+└─ 裂差裂和专项练习题.html  # 裂差 · 裂和 应用练习 | 小学数学专题
 └─ README.md
 ```
 <!-- AUTO-FILES-END -->
